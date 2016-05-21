@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="html5canvas" width="600" height="300" style="border:2px solid #f0f0f0;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+      var canvas = document.getElementById('html5canvas');
+      var context = canvas.getContext('2d');
+      var x = canvas.width / 2;
+      var y = canvas.height / 2;
+      var radius = 120;
+      var startAngle = 2.0 * Math.PI;
+      var endAngle = 1.5 * Math.PI;
+      var counterClockwise = false;
+
+      context.beginPath();
+      context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+      context.lineWidth = 15;
+
+      // line color
+      context.strokeStyle = 'red';
+      context.stroke();
+</script>
+
+
+<script>
+     var canvas = document.getElementById('html5canvas');
+      var context = canvas.getContext('2d');
+
+      context.beginPath();
+      context.moveTo(140, 30);
+
+      // line 1
+      context.lineTo(200, 170);
+
+      // quadratic curve
+      context.quadraticCurveTo(230, 200, 250, 120);
+
+      // bezier curve
+      context.bezierCurveTo(290, -40, 300, 200, 400, 150);
+
+      // line 2
+      context.lineTo(500, 60);
+
+      context.lineWidth = 5;
+      context.strokeStyle = 'blue';
+      context.stroke();
+</script>
+
+
+</body>
+</html>
